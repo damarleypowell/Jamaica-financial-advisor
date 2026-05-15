@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd jamaica-financial-advisor/frontend && npm install && npm run build",
+  "outputDirectory": "jamaica-financial-advisor/frontend/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

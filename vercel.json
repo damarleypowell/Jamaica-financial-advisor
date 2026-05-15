@@ -1,8 +1,18 @@
 {
+  "version": 2,
   "buildCommand": "cd jamaica-financial-advisor/frontend && npm install && npm run build",
   "outputDirectory": "jamaica-financial-advisor/frontend/dist",
-  "framework": null,
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30,
+      "memory": 1024,
+      "includeFiles": "jamaica-financial-advisor/**"
+    }
+  },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/api/:path*",  "destination": "/api/index.js" },
+    { "source": "/health",      "destination": "/api/index.js" },
+    { "source": "/analyze",     "destination": "/api/index.js" },
+    { "source": "/:path*",      "destination": "/index.html" }
   ]
 }
